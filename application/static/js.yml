@@ -2,6 +2,7 @@ libs:
   - bower_components/respond/dest/respond.min.js
   - bower_components/jquery/dist/jquery.min.js
   - bower_components/bootstrap/dist/js/bootstrap.min.js
+  - bower_components/highcharts-release/highcharts.js
   - js/init.js
 
 layout:

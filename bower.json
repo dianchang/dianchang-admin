@@ -11,6 +11,6 @@
     "font-awesome": "4.3.0",
     "respond": "1.4.2",
     "jquery": "1.11.2",
-    "highcharts.com": "~4.1.6"
+    "highcharts-release": "~4.1.7"
   }
 }
