@@ -8,25 +8,25 @@ from ..models import User
 
 class SigninForm(Form):
     """Form for signin"""
-    email = StringField('Email',
+    email = StringField('邮箱',
                         validators=[
-                            DataRequired("Email shouldn't be empty."),
-                            Email('Email format is not correct.')
+                            DataRequired("邮箱不能为空"),
+                            Email('邮箱格式不正确')
                         ])
 
-    password = PasswordField('Password',
-                             validators=[DataRequired("Password shouldn't be empty.")])
+    password = PasswordField('密码',
+                             validators=[DataRequired("密码不能为空")])
 
     def validate_email(self, field):
         user = User.query.filter(User.email == self.email.data).first()
         if not user:
-            raise ValueError("Account doesn't exist.")
+            raise ValueError("账户不存在")
 
     def validate_password(self, field):
         if self.email.data:
             user = User.query.filter(User.email == self.email.data).first()
             if not user or not user.check_password(self.password.data):
-                raise ValueError('Password is not correct.')
+                raise ValueError('密码不正确')
             else:
                 self.user = user
 

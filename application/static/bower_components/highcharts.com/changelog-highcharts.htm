@@ -1,0 +1,46 @@
+<p>Highcharts 4.1.6 (2015-06-12)</p>
+<ul>
+    <li>Added new option, <a href="http://api.highcharts.com/highcharts#plotOptions.series.getExtremesFromAll">series.getExtremesFromAll</a>, that tells the y axis to be scaled to the whole series range, not only the visible part.</li>
+    <li>Added scaling support for Z axis on 3D charts.</li>
+    <li>Added xAxis.title.x and xAxis.title.y options for positioning.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4160">#4160</a>, 3D should be disabled for inverted charts</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4160">#4160</a>, 3D should be disabled for inverted charts.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/1457">#1457</a>, columnrange did not render with reversed Y axis.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/182">#182</a>, browser hangs when updating chart from series mouseOut event.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/2077">#2077</a>, innerSize of pies was not correct when size was dynamic.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/2088">#2088</a>, crosshair shown on multiple axes.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/3923">#3923</a>, crash in Chrome when extending a dashed line to extreme length.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/3974">#3974</a>, duplicated data labels on Retina displays when text-shadow is applied.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/3977">#3977</a>, tooltip content sometimes displayed outside tooltip.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4069">#4069</a>, slow updating of multiple pie slices.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4108">#4108</a>, line wrap dataLabels in tree maps.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4116">#4116</a>, cannot disable tooltip on polar chart.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4117">#4117</a>, broken tooltips in pie charts when useHTML was enabled.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4124">#4124</a>, treemap click on legend item returned error.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4128">#4128</a>, tooltip only looked at X value for line series</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4146">#4146</a>, point marker stayed after updating point to null when connectNulls was true.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4161">#4161</a>, a regression causing wrong position of tooltip in top row of heatmap.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4163">#4163</a>, tooltip broken on pie in combo chart.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4166">#4166</a>, resetting point state was coupled to tooltip, resulting in state not reset when the tooltip was empty.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4167">#4167</a>, chart crashed on Y axis breaks in stock chart.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4177">#4177</a>, X axis label ellipsis overlapped when in the middle of the axis.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4197">#4197</a>, ignoreHiddenPoint didn't work.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4200">#4200</a>, unresponsive tooltip on tight column chart with shared tooltip.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4201">#4201</a>, redundant tick alignment to empty axes.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4203">#4203</a>, radial gradient rendered wrong in 3D Pies</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4208">#4208</a>, click events did not bubble.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4210">#4210</a>, touch scroll was trapped when zoomType enabled.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4217">#4217</a>, tickInterval on linked axis did not follow that of parent.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4221">#4221</a>, negative color and zones not working with logarithmic axis.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4223">#4223</a>, tooltips showed year when data resolution was less than 1 millisecond.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4247">#4247</a>, X zooming within an Y axis break resulted in empty chart.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4256">#4256</a>, summary columns on waterfall, including data labels, extended below the plot area if an Y axis minimum was set.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4261">#4261</a>, added namespace to drillToNode on click event in tree maps.</li>
+    <li>Fixed <a href="https://github.com/highslide-software/highcharts.com/issues/4264">#4264</a>, column in stacked chart was mispositioned in some cases.</li>
+    <li>Fixed issue with wrong data label being hidden on overlap in columns.</li>
+    <li>Fixed issues with ellipsis on first and last label on X axis. Closes <a href="https://github.com/highslide-software/highcharts.com/issues/3975">#3975</a>.</li>
+    <li>Export: Added missing treemaps.js, fixes <a href="https://github.com/highslide-software/highcharts.com/issues/4092">#4092</a>.</li>
+    <li>Export: Added support for Map constructor.</li>
+    <li>Export: Added treemaps for serverside rendering.</li>
+    <li>Export: Enable loading of maps.js.</li>
+</ul>
