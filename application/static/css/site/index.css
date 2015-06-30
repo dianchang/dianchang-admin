@@ -1,0 +1,6 @@
+.user-charts,
+.question-charts,
+.answer-charts {
+  width: 100%;
+  height: 400px;
+}
