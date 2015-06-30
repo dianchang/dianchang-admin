@@ -21,6 +21,7 @@ PyYAML
 cssmin
 lesscpy
 glob2
+flask-boost
 
 # deploy
 gunicorn

@@ -1,5 +1,5 @@
 libs:
-  - bower_components/bootstrap/dist/css/bootstrap.min.css
+  - css/libs/bootstrap.min.css
   - bower_components/font-awesome/css/font-awesome.min.css
 
 layout:
