@@ -45,11 +45,14 @@ def create_app():
     # CSRF protect
     CsrfProtect(app)
 
-    # Enable Sentry in production mode
+    # Log errors to stderr in production mode
     if app.production:
-        from .utils.sentry import sentry
+        app.logger.addHandler(logging.StreamHandler())
+        app.logger.setLevel(logging.ERROR)
 
-        sentry.init_app(app, dsn=app.config.get('SENTRY_DSN'))
+        # Enable Sentry
+        if app.config.get('SENTRY_DSN'):
+            from .utils.sentry import sentry
     else:
         DebugToolbarExtension(app)
 
