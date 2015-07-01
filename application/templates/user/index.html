@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% from "macros/_utils.html" import pagination %}
+
+{% block page_title %}用户{% endblock %}
+{% block page_content %}
+    <div class="container">
+        <h3>用户详情</h3>
+
+        <table class="table">
+            <tr>
+                <th>用户</th>
+                <th>邮箱</th>
+                <th>地点</th>
+                <th>组织</th>
+                <th>职位</th>
+                <th>激活</th>
+            </tr>
+
+            {% for user in users.items %}
+                <tr>
+                    <td class="name">
+                        <img src="{{ user.avatar_url }}" class="img-circle" alt=""/>
+                        <a href="{{ user.profile_url }}" target="_blank">{{ user.name }}</a>
+                    </td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.position or "" }}</td>
+                    <td>{{ user.organization or "" }}</td>
+                    <td>{{ user.position or "" }}</td>
+                    <td>{% if not user.is_active %}未激活{% endif %}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        {{ pagination(users) }}
+    </div>
+{% endblock %}
