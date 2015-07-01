@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% from "macros/_utils.html" import pagination %}
+
+{% block page_title %}邀请码{% endblock %}
+{% block page_content %}
+    <div class="container">
+        <a href="#"
+           class="btn btn-primary btn-sm pull-right btn-generate-codes">生成邀请码</a>
+
+        <h3 class="no-margin-top">邀请码</h3>
+
+        <table class="table">
+            <tr>
+                <th>邀请码</th>
+                <th>发送邮箱</th>
+                <th>发送时间</th>
+                <th>注册用户</th>
+                {#                <th>操作</th>#}
+            </tr>
+
+            {% for code in codes.items %}
+                <tr>
+                    <td>{{ code.code }}</td>
+                    <td>{{ code.email or "" }}</td>
+                    <td>{{ code.sended_at or "" }}</td>
+                    <td>
+                        {% if code.user_id %}
+                            <a href="{{ code.user.profile_url }}" target="_blank">
+                                {{ code.user.name }}</a>
+                        {% endif %}
+                    </td>
+                    {#                    <td>#}
+                    {#                        <a href="#" class="btn btn-sm btn-default">发送</a>#}
+                    {#                    </td>#}
+                </tr>
+            {% endfor %}
+        </table>
+
+        {{ pagination(codes) }}
+    </div>
+{% endblock %}

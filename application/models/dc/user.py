@@ -32,3 +32,24 @@ class DCUser(db.Model):
         config = current_app.config
         dc_domain = config.get('DC_DOMAIN')
         return "%s/people/%d" % (dc_domain, self.id)
+
+
+class DCInvitationCode(db.Model):
+    """邀请码"""
+    __tablename__ = 'invitation_code'
+    __bind_key__ = 'dc'
+
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(200))
+    email = db.Column(db.String(100))
+    used = db.Column(db.Boolean, default=False)
+    sended_at = db.Column(db.DateTime)
+    created_at = db.Column(db.DateTime, default=datetime.now)
+
+    # 当用户使用此邀请码注册后，填充user_id字段
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('DCUser',
+                           backref=db.backref('invitation_code',
+                                              cascade="all, delete, delete-orphan",
+                                              uselist=False),
+                           foreign_keys=[user_id])
