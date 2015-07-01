@@ -4,8 +4,8 @@
 {% block page_title %}邀请码{% endblock %}
 {% block page_content %}
     <div class="container">
-        <a href="#"
-           class="btn btn-primary btn-sm pull-right btn-generate-codes">生成邀请码</a>
+        <a href="{{ url_for('invitation.generate_codes') }}"
+           class="btn btn-primary btn-sm pull-right btn-generate-codes">生成 5 个邀请码</a>
 
         <h3 class="no-margin-top">邀请码</h3>
 
@@ -15,7 +15,7 @@
                 <th>发送邮箱</th>
                 <th>发送时间</th>
                 <th>注册用户</th>
-                {#                <th>操作</th>#}
+{#                <th>操作</th>#}
             </tr>
 
             {% for code in codes.items %}
@@ -29,9 +29,9 @@
                                 {{ code.user.name }}</a>
                         {% endif %}
                     </td>
-                    {#                    <td>#}
-                    {#                        <a href="#" class="btn btn-sm btn-default">发送</a>#}
-                    {#                    </td>#}
+{#                    <td>#}
+{#                        <a href="#" class="btn btn-sm btn-default">发送</a>#}
+{#                    </td>#}
                 </tr>
             {% endfor %}
         </table>

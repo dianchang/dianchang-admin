@@ -19,7 +19,7 @@ def index():
 @UserPermission()
 def generate_codes():
     """生成邀请码"""
-    for i in xrange(0, 2):
+    for i in xrange(0, 5):
         hash_value = ''
         while True:
             hash_value = gen_salt(6)
