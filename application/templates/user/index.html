@@ -23,7 +23,7 @@
                         <a href="{{ user.profile_url }}" target="_blank">{{ user.name }}</a>
                     </td>
                     <td>{{ user.email }}</td>
-                    <td>{{ user.position or "" }}</td>
+                    <td>{{ user.location or "" }}</td>
                     <td>{{ user.organization or "" }}</td>
                     <td>{{ user.position or "" }}</td>
                     <td>{% if not user.is_active %}未激活{% endif %}</td>
