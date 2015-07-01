@@ -7,10 +7,10 @@ from ..models import dc_db, DCInvitationCode
 bp = Blueprint('invitation', __name__)
 
 
-@bp.route('/invitation/index')
+@bp.route('/invitation')
 @UserPermission()
 def index():
-    page = request.args.get('page', 1)
+    page = request.args.get('page', 1, int)
     codes = DCInvitationCode.query.order_by(DCInvitationCode.created_at.desc()).paginate(page, 20)
     return render_template('invitation/index.html', codes=codes)
 
