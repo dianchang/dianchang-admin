@@ -2,7 +2,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from werkzeug.security import gen_salt
 from ..utils.permissions import UserPermission
-from ..models import dc_db, DCInvitationCode
+from ..models.dc import db as dc_db, InvitationCode as DCInvitationCode
 
 bp = Blueprint('invitation', __name__)
 

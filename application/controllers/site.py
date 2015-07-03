@@ -2,7 +2,7 @@
 from datetime import date, timedelta
 from flask import render_template, Blueprint
 from ..utils.permissions import UserPermission
-from ..models import DCUser, dc_db, DCQuestion, DCAnswer
+from ..models.dc import db as dc_db, User as DCUser, Question as DCQuestion, Answer as DCAnswer
 
 bp = Blueprint('site', __name__)
 

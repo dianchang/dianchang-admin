@@ -1,7 +1,7 @@
 # coding: utf-8
 from flask import Blueprint, render_template, request
 from ..utils.permissions import UserPermission
-from ..models import dc_db, DCUser
+from ..models.dc import db as dc_db, User as DCUser
 
 bp = Blueprint('user', __name__)
 

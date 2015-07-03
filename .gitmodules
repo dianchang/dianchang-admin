@@ -1,0 +1,3 @@
+[submodule "application/models/dc"]
+	path = application/models/dc
+	url = https://github.com/dianchang/dianchang-models
