@@ -7,7 +7,7 @@ from application.models import db
 from application.utils.assets import build
 
 # Used by app debug & livereload
-PORT = 6000
+PORT = 7000
 
 app = create_app()
 manager = Manager(app)

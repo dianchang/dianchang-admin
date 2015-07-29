@@ -33,30 +33,30 @@ class SigninForm(Form):
 
 class SignupForm(Form):
     """Form for signin"""
-    name = StringField('Username',
-                       validators=[DataRequired("Username shouldn't be empty.")])
+    name = StringField('用户名',
+                       validators=[DataRequired("用户名不能为空")])
 
-    email = StringField('Email',
+    email = StringField('邮箱',
                         validators=[
-                            DataRequired(message="Email shouldn't be empty."),
-                            Email(message='Email format is not correct.')
+                            DataRequired(message="邮箱不能为空"),
+                            Email(message='邮箱格式不正确')
                         ])
 
-    password = PasswordField('Password',
-                             validators=[DataRequired("Password shouldn't be empty.")])
+    password = PasswordField('密码',
+                             validators=[DataRequired("密码不能为空")])
 
-    repassword = PasswordField('Retype password',
+    repassword = PasswordField('重复密码',
                                validators=[
-                                   DataRequired("Please retype the password."),
-                                   EqualTo('password', message="Passwords must match.")
+                                   DataRequired("重复密码不能为空"),
+                                   EqualTo('password', message="两次密码输入不一致")
                                ])
 
     def validate_name(self, field):
         user = User.query.filter(User.name == self.name.data).first()
         if user:
-            raise ValueError('This username already exists.')
+            raise ValueError('用户名已存在')
 
     def validate_email(self, field):
         user = User.query.filter(User.email == self.email.data).first()
         if user:
-            raise ValueError('This email already exists.')
+            raise ValueError('邮箱已存在')

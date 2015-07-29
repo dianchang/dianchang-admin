@@ -19,20 +19,20 @@ def signin():
     return render_template('account/signin.html', form=form)
 
 
-# @bp.route('/signup', methods=['GET', 'POST'])
-# @VisitorPermission()
-# def signup():
-#     """Signup"""
-#     form = SignupForm()
-#     if form.validate_on_submit():
-#         params = form.data.copy()
-#         params.pop('repassword')
-#         user = User(**params)
-#         db.session.add(user)
-#         db.session.commit()
-#         signin_user(user)
-#         return redirect(url_for('site.index'))
-#     return render_template('account/signup.html', form=form)
+@bp.route('/signup', methods=['GET', 'POST'])
+@VisitorPermission()
+def signup():
+    """Signup"""
+    form = SignupForm()
+    if form.validate_on_submit():
+        params = form.data.copy()
+        params.pop('repassword')
+        user = User(**params)
+        db.session.add(user)
+        db.session.commit()
+        signin_user(user)
+        return redirect(url_for('site.index'))
+    return render_template('account/signup.html', form=form)
 
 
 @bp.route('/signout')
