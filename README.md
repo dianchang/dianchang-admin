@@ -1,8 +1,20 @@
 电场城管大队
 =======
 
-http://119.254.101.73
+## 开发环境搭建
 
-队长：哈丁
+```
+git clone https://github.com/dianchang/dianchang-admin.git --recursive
+virtualenv venv
+. venv/bin/activate
+pip install -r requirements.txt
+pip install -r application/models/dc/requirements.txt
+bower install
+```
 
-副队长：文森、hustlzp
+将`development_sample.py`另存为`development.py`，并按需更新配置项。
+
+```
+python manage.py db upgrade
+python manage.py run
+```
