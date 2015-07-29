@@ -13,7 +13,7 @@ class DevelopmentConfig(Config):
     PRODUCT_TOPIC_ID = 2,
     ORGANIZATION_TOPIC_ID = 3,
     POSITION_TOPIC_ID = 4,
-    SKILL_TOPIC_ID = 5
+    SKILL_TOPIC_ID = 5,
     PEOPLE_TOPIC_ID = 6,
     OTHER_TOPIC_ID = 7,
     NC_TOPIC_ID = 8,
